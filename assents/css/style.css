@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 :root {
     --primary-color: #F0F0F0;
 
@@ -6,6 +8,7 @@
     --border-colro: #28292e;
 
     --title-color: #9A9A9C;
+    --text-color: #9A9A9C;
     --link-color: #9a9a9c;
     --icon-color: #C7C8C9;
 
@@ -22,7 +25,13 @@
 
 body {
     background-color: var(--primary-bg-color);
+    font-family: 'Inter', Courier, monospace;
 }
+
+a{
+    text-decoration: none;
+}
+
 
 i {
     color: var(--icon-color);
@@ -33,6 +42,7 @@ i {
     flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
     padding: 0.5rem 1rem;
 }
 
@@ -42,3 +52,61 @@ i {
 
 }
 
+#toggleTheme{
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+    background-color: var(--primary-bg-color);
+
+}
+
+.menu__item{
+    width: 100%;
+}
+
+
+.menu--mobile{
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+    justify-content: space-between;
+    border-top: 1px solid var(--primary-bg-color);
+} 
+
+.menu--mobile .menu__link{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    gap: .5rem;
+}
+
+.menu__link.active .menu__icon, 
+.menu__text{
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.menu__icon, .menu__text{
+    color: var(--text-color);
+}
+
+.menu__icon{
+    font-size: 1.5rem;
+}
+
+.menu__text{
+    font-size: .75rem;
+    text-transform: uppercase;
+}
+
+@media(min-width: 768px){
+    .menu--mobile{
+        display:none
+    }
+}
